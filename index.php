@@ -2,7 +2,7 @@
 include 'db.php';
 include 'navbar.php';
 // Fetch users
-$sql = "SELECT * FROM users_crud";
+$sql = "SELECT * FROM users";
 $result = $conn->query($sql);
 ?>
 
@@ -32,7 +32,7 @@ $result = $conn->query($sql);
                         <th class="py-3 px-6 text-left">ID</th>
                         <th class="py-3 px-6 text-left">Name</th>
                         <th class="py-3 px-6 text-left">Email</th>
-                        <th class="py-3 px-6 text-left">Phone</th>
+                        <th class="py-3 px-6 text-left">password</th>
                         <th class="py-3 px-6 text-center">Actions</th>
                     </tr>
                 </thead>
@@ -40,9 +40,9 @@ $result = $conn->query($sql);
                     <?php while($row = $result->fetch_assoc()) { ?>
                     <tr class="hover:bg-gray-100 transition-colors duration-200 ease-in-out">
                         <td class="py-4 px-6 text-left whitespace-nowrap"><?php echo $row['id']; ?></td>
-                        <td class="py-4 px-6 text-left whitespace-nowrap"><?php echo $row['name']; ?></td>
+                        <td class="py-4 px-6 text-left whitespace-nowrap"><?php echo $row['fullname']; ?></td>
                         <td class="py-4 px-6 text-left whitespace-nowrap"><?php echo $row['email']; ?></td>
-                        <td class="py-4 px-6 text-left whitespace-nowrap"><?php echo $row['phone']; ?></td>
+                        <td class="py-4 px-6 text-left whitespace-nowrap"><?php echo $row['password']; ?></td>
                         <td class="py-4 px-6 text-center whitespace-nowrap">
                             <a href="edit.php?id=<?php echo $row['id']; ?>" class="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full hover:bg-yellow-500 hover:text-white transition-colors duration-300 ease-in-out shadow-sm mr-2">
                                 Edit
