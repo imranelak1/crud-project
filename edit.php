@@ -15,8 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-   
-    $sql = "UPDATE users SET fullname='$fullname', email='$email', password='$password' WHERE id=$id";
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $sql = "UPDATE users SET fullname='$fullname', email='$email', password='$hashed_password' WHERE id=$id";
 
     if ($conn->query($sql) === TRUE) {
         header("Location: index.php");
