@@ -17,14 +17,14 @@ $result = $conn->query($sql);
     <?php renderNavbar("User Management Dashboard"); ?>
 
     <div class="container mx-auto py-10 px-4 sm:px-8">
-        <!-- Add New User Button -->
+      
         <div class="flex justify-end mb-6">
             <a href="create.php" class="bg-gradient-to-r from-blue-600 to-blue-800 text-white font-semibold py-2 px-6 rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
                 + Add New User
             </a>
         </div>
 
-        <!-- Responsive Table Container -->
+        
         <div class="overflow-hidden rounded-lg shadow-md">
             <table class="min-w-full bg-white divide-y divide-gray-200">
                 <thead class="bg-gradient-to-r from-gray-200 to-gray-300">
